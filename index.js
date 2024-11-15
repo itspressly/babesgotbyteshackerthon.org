@@ -25,12 +25,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (results.length > 0) {
       searchResults.innerHTML = results
-        .map(
-          (r) => `<p>${r.name} - Last Visit: ${r.lastVisit}</p>`
-        )
+        .map((r) => `<p>${r.name} - Last Visit: ${r.lastVisit}</p>`)
         .join("");
     } else {
       searchResults.innerHTML = "<p>No results found.</p>";
     }
   });
+
+  // Queue Management
+  const queueForm = document.getElementById("queue-form");
+  const queueName = document.getElementById("queue-name");
+  const symptoms = document.getElementById("symptoms");
+  const queueList = document.getElementById("queue-list");
+
+  const queue = [];
+
+  const triageConditions = [
+    { keywords: ["chest pain", "difficulty breathing"], level: "High" },
+    { keywords: ["fever", "cough"], level: "Medium" },
+    { keywords: ["headache", "fatigue"], level: "Low" },
+  ];
+
+  function determineTriage(symptoms) {
+    for (let condition of triageConditions) {
+      if (condition.keywords.some((keyword) => symptoms.includes(keyword))) {
+        return condition.level;
+      }
+    }
+    return "Low";
+  }
+
+  queueForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = queueName.value;
+    const patientSymptoms = symptoms.value.toLowerCase();
+    const triageLevel = determineTriage(patientSymptoms);
+
+    queue.push({ name, triageLevel, position: queue.length + 1 });
+    updateQueueDisplay();
+
+    queueName.value = "";
+    symptoms.value = "";
+  });
+
+  function updateQueueDisplay() {
+    queueList.innerHTML = queue
+      .map(
+        (patient) =>
+          `<li>${patient.name} - Triage: ${patient.triageLevel} (Position: ${patient.position})</li>`
+      )
+      .join("");
+  }
 });
