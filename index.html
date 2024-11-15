@@ -19,6 +19,7 @@
         <li><a href="#dashboard">Dashboard</a></li>
         <li><a href="#search">Search</a></li>
         <li><a href="#profile">Profile</a></li>
+        <li><a href="#queue">Queue</a></li>
       </ul>
     </nav>
   </header>
@@ -49,6 +50,19 @@
     <section id="profile" class="section">
       <h2>Profile</h2>
       <p>Manage your account and settings here.</p>
+    </section>
+
+    <section id="queue" class="section">
+      <h2>Virtual Queue</h2>
+      <form id="queue-form">
+        <input type="text" id="queue-name" placeholder="Enter your name..." required>
+        <textarea id="symptoms" placeholder="Enter your symptoms..." required></textarea>
+        <button type="submit">Check-In</button>
+      </form>
+      <div id="queue-status">
+        <h3>Current Queue</h3>
+        <ul id="queue-list"></ul>
+      </div>
     </section>
   </main>
 
