@@ -88,3 +88,46 @@ footer {
   align-items: center;
   z-index: 9999;
 }
+
+/* Queue Section */
+#queue {
+  margin-top: 2rem;
+}
+
+#queue-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#queue-form input,
+#queue-form textarea,
+#queue-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#queue-form button {
+  background-color: #6200ea;
+  color: white;
+  cursor: pointer;
+}
+
+#queue-status {
+  margin-top: 1rem;
+}
+
+#queue-list {
+  list-style: none;
+  padding: 0;
+}
+
+#queue-list li {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: #e3f2fd;
+}
