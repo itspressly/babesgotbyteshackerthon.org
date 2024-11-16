@@ -1,0 +1,41 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+#symptom-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #6200ea;
+}
+
+#symptom-form button {
+    background-color: #6200ea;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+#symptom-form button:hover {
+    background-color: #3700b3;
+}
+
+#suggestion-output {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    text-align: center;
+}

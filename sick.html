@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Suggestion</title>
+    <link rel="stylesheet" href="./sick.css">
+</head>
+<body>
+
+    <header>
+        <h1>Symptom Based Suggestions</h1>
+    </header>
+
+    <main>
+        <section id="symptom-form-section">
+            <form id="symptom-form">
+                <textarea id="symptoms" placeholder="Describe your symptoms here..." required></textarea>
+                <button type="submit">Get Suggestions</button>
+                <a href="./index.html">GO back to the main page</a>
+            </form>
+        </section>
+
+        <section id="suggestion-output-section">
+            <div id="suggestion-output"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Powered by OpenAI API</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./sick.js"></script>
+
+</body>
+</html>
