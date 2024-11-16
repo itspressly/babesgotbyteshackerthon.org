@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Symptom Tracker</title>
+  <title>Symptom Tracker Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Symptom Tracker and Waiting List</h1>
+    <h1>Symptom Tracker Dashboard</h1>
   </header>
 
   <main>
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <p><strong>Total Sick People:</strong> <span id="total-sick">0</span></p>
+      <h3>Recent Additions:</h3>
+      <ul id="recent-additions"></ul>
+    </section>
+
+    <!-- Upload Section -->
     <section id="upload-section">
       <h2>Upload CSV File</h2>
       <input type="file" id="csvFileInput" accept=".csv" />
       <button id="processFileButton">Process File</button>
     </section>
 
+    <!-- Manual Entry -->
+    <section id="manual-entry">
+      <h2>Add Sick Person Manually</h2>
+      <form id="addPersonForm">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" placeholder="Enter name..." required />
+        <label for="symptomsInput">Symptoms:</label>
+        <input type="text" id="symptomsInput" placeholder="Enter symptoms..." required />
+        <button type="submit">Add Person</button>
+      </form>
+    </section>
+
+
+    <!-- Waiting List -->
     <section id="waiting-list-section">
       <h2>Waiting List</h2>
       <input type="text" id="searchInput" placeholder="Search by name..." />
       <button id="searchButton">Search</button>
       <ul id="waitingList"></ul>
-      <a href="./index.html"><button>GO back to main page</button></a>
+      <a href="./index.html"><button>Back to the main page</button></a>
     </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
